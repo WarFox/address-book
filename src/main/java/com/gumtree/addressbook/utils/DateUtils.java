@@ -1,5 +1,7 @@
 package com.gumtree.addressbook.utils;
 
+import com.gumtree.addressbook.App;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -11,7 +13,7 @@ public class DateUtils {
     }
 
     public static LocalDate parseDate(String date) {
-        return parseDate(date, "dd/MM/yy");
+        return parseDate(date, App.dateFormat);
     }
 
     public static LocalDate parseDate(String date, String format) {

@@ -3,6 +3,8 @@ package com.gumtree.addressbook;
 import com.gumtree.addressbook.models.Gender;
 import com.gumtree.addressbook.models.Person;
 import com.gumtree.addressbook.utils.DateUtils;
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,6 +15,9 @@ import java.util.Scanner;
  * Reads Address book from standard input
  */
 public class App {
+
+    public static final Config conf = ConfigFactory.load();
+    public static final String dateFormat = conf.getString("date.format");
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
