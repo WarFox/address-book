@@ -8,9 +8,10 @@
   :LOGBOOK:
   CLOCK: [2017-03-04 Sat 16:43]--[2017-03-04 Sat 16:54] =>  0:11
   :END:
-* TODO Age difference in days
+* DONE Age difference in days
+  CLOSED: [2017-03-04 Sat 17:18]
   :LOGBOOK:
-  CLOCK: [2017-03-04 Sat 16:55]
+  CLOCK: [2017-03-04 Sat 16:55]--[2017-03-04 Sat 17:18] =>  0:23
   :END:
 * TODO Find by first name
 * TODO Read from standard input
