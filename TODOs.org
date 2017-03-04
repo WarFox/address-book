@@ -1,0 +1,12 @@
+* DONE Find by gender
+  CLOSED: [2017-03-04 Sat 16:27]
+  :LOGBOOK:
+  CLOCK: [2017-03-04 Sat 15:57]--[2017-03-04 Sat 16:26] =>  0:29
+  :END:
+* TODO Sort by age
+* TODO Age difference in days
+* TODO Find by first name
+* TODO Read from standard input
+* TODO Print how many males
+* TODO Print who is the oldest
+* TODO Print how many days older is Bill than Paul
