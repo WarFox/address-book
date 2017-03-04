@@ -9,6 +9,9 @@
   CLOCK: [2017-03-04 Sat 16:43]--[2017-03-04 Sat 16:54] =>  0:11
   :END:
 * TODO Age difference in days
+  :LOGBOOK:
+  CLOCK: [2017-03-04 Sat 16:55]
+  :END:
 * TODO Find by first name
 * TODO Read from standard input
 * TODO Print how many males
