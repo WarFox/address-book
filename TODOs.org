@@ -24,6 +24,10 @@
   :END:
 * DONE Add Date parser
   CLOSED: [2017-03-04 Sat 18:59]
-* TODO Print how many males
-* TODO Print who is the oldest
-* TODO Print how many days older is Bill than Paul
+* DONE Print how many males
+  CLOSED: [2017-03-04 Sat 19:54]
+* DONE Print who is the oldest
+  CLOSED: [2017-03-04 Sat 19:54]
+* DONE Print how many days older is Bill than Paul
+  CLOSED: [2017-03-04 Sat 19:54]
+* TODO Add date format to config file

@@ -17,7 +17,7 @@ public class Person {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public Gender getGender() {
@@ -26,6 +26,15 @@ public class Person {
 
     public LocalDate getDob() {
         return dob;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", gender=" + gender +
+                ", dob=" + dob +
+                '}';
     }
 
 }
