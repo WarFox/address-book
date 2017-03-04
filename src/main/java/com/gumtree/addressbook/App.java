@@ -34,7 +34,7 @@ public class App {
         }
 
         AddressBook addressBook = new AddressBook(contacts);
-        questionAnswer("How many males are in the address book?", addressBook.findByGender(Gender.Male).size());
+        questionAnswer("How many males are in the address book?", addressBook.filterByGender(Gender.Male).size());
         questionAnswer("Who is the oldest person in the address book?", addressBook.sortByDob().stream().findFirst().get().getName());
         Person bill = addressBook.findByFirstName("Bill").get();
         Person paul = addressBook.findByFirstName("Paul").get();

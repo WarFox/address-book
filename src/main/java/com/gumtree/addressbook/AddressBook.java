@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class AddressBook {
+class AddressBook {
 
     private List<Person> contacts = new ArrayList<>();
 
@@ -16,7 +16,7 @@ public class AddressBook {
         this.contacts = contacts;
     }
 
-    public List<Person> findByGender(Gender gender) {
+    public List<Person> filterByGender(Gender gender) {
         return contacts.stream()
                 .filter(person -> gender.equals(person.getGender()))
                 .collect(Collectors.toList());

@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 public class Person {
 
-    private String name;
+    private final String name;
 
-    private Gender gender;
+    private final Gender gender;
 
-    private LocalDate dob;
+    private final LocalDate dob;
 
     public Person(String name, Gender gender, LocalDate dob) {
         this.name = name;

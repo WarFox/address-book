@@ -30,4 +30,5 @@
   CLOSED: [2017-03-04 Sat 19:54]
 * DONE Print how many days older is Bill than Paul
   CLOSED: [2017-03-04 Sat 19:54]
-* TODO Add date format to config file
+* DONE Add date format to config file
+  CLOSED: [2017-03-04 Sat 20:12]

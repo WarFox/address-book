@@ -14,8 +14,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class AddressBookTest {
 
-    private List<Person> contacts = new ArrayList<>();
-    Person mike = new Person("Mike", Gender.Male, LocalDate.of(1985, 1, 1));
+    private final List<Person> contacts = new ArrayList<>();
+    private final Person mike = new Person("Mike", Gender.Male, LocalDate.of(1985, 1, 1));
 
     @Before
     public void setUp() throws Exception {
@@ -29,7 +29,7 @@ public class AddressBookTest {
     @Test
     public void testFindMales() throws Exception {
         AddressBook addressBook = new AddressBook(contacts);
-        List<Person> contacts = addressBook.findByGender(Gender.Male);
+        List<Person> contacts = addressBook.filterByGender(Gender.Male);
         assertThat(contacts).hasSize(3);
         contacts.forEach(contact -> assertThat(contact.getGender()).isEqualTo(Gender.Male));
     }
@@ -37,7 +37,7 @@ public class AddressBookTest {
     @Test
     public void testFindFemales() throws Exception {
         AddressBook addressBook = new AddressBook(contacts);
-        List<Person> contacts = addressBook.findByGender(Gender.Female);
+        List<Person> contacts = addressBook.filterByGender(Gender.Female);
         assertThat(contacts).hasSize(2);
         contacts.forEach(contact -> assertThat(contact.getGender()).isEqualTo(Gender.Female));
     }
@@ -45,8 +45,8 @@ public class AddressBookTest {
     @Test
     public void testEmptyContactsShouldReturnEmptyList() throws Exception {
         AddressBook addressBook = new AddressBook(new ArrayList<>());
-        assertThat(addressBook.findByGender(Gender.Female)).isEmpty();
-        assertThat(addressBook.findByGender(Gender.Male)).isEmpty();
+        assertThat(addressBook.filterByGender(Gender.Female)).isEmpty();
+        assertThat(addressBook.filterByGender(Gender.Male)).isEmpty();
     }
 
     @Test
