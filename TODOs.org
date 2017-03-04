@@ -19,6 +19,11 @@
   CLOCK: [2017-03-04 Sat 18:01]--[2017-03-04 Sat 18:12] =>  0:11
   :END:
 * TODO Read from standard input
+  :LOGBOOK:
+  CLOCK: [2017-03-04 Sat 18:32]--[2017-03-04 Sat 18:57] =>  0:25
+  :END:
+* DONE Add Date parser
+  CLOSED: [2017-03-04 Sat 18:59]
 * TODO Print how many males
 * TODO Print who is the oldest
 * TODO Print how many days older is Bill than Paul

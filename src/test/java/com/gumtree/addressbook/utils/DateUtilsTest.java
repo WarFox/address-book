@@ -35,4 +35,16 @@ public class DateUtilsTest {
         assertThat(DateUtils.daysBetween(date1, date2)).isEqualTo(-366);
     }
 
+    @Test
+    public void testParseDateWithDefaultFormat() throws Exception {
+        LocalDate localDate = DateUtils.parseDate("12/12/12");
+        assertThat(localDate).isEqualTo(LocalDate.of(2012, 12, 12));
+    }
+
+    @Test
+    public void testParseDateWithFormat() throws Exception {
+        LocalDate localDate = DateUtils.parseDate("31/01/2017", "dd/MM/yyyy");
+        assertThat(localDate).isEqualTo(LocalDate.of(2017, 1, 31));
+    }
+
 }
