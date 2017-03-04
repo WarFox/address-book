@@ -2,7 +2,6 @@ package com.gumtree.addressbook;
 
 /**
  * Hello world!
- *
  */
 public class App {
 
