@@ -8,16 +8,18 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AddressBookTest {
 
     private List<Person> contacts = new ArrayList<>();
+    Person mike = new Person("Mike", Gender.Male, LocalDate.of(1985, 1, 1));
 
     @Before
     public void setUp() throws Exception {
-        contacts.add(new Person("Mike", Gender.Male, LocalDate.of(1985, 1, 1)));
+        contacts.add(mike);
         contacts.add(new Person("Clara", Gender.Female, LocalDate.of(1989, 1, 1)));
         contacts.add(new Person("Bill", Gender.Male, LocalDate.of(1982, 1, 1)));
         contacts.add(new Person("Jack", Gender.Male, LocalDate.of(1983, 1, 1)));
@@ -53,6 +55,25 @@ public class AddressBookTest {
         List<Person> sortedContacts = addressBook.sortByDob();
         Person oldestPerson = sortedContacts.stream().findFirst().get();
         assertThat(oldestPerson.getName()).isEqualTo("Bill");
+    }
+
+    @Test
+    public void testFindByFirstName() throws Exception {
+        AddressBook addressBook = new AddressBook(contacts);
+        Optional<Person> personOptional = addressBook.findByFirstName("Mike");
+        assertThat(personOptional.isPresent()).isTrue();
+        personOptional.map(person -> {
+            assertThat(person.getDob()).isEqualTo(this.mike.getDob());
+            assertThat(person.getGender()).isEqualTo(Gender.Male);
+            assertThat(person.getName()).isEqualTo("Mike");
+            return person;
+        });
+    }
+
+    @Test
+    public void testFindByFirstNameThatDoesNotExist() throws Exception {
+        AddressBook addressBook = new AddressBook(contacts);
+        assertThat(addressBook.findByFirstName("DoesNotExist").isPresent()).isFalse();
     }
 
 }

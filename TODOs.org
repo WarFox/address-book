@@ -13,7 +13,11 @@
   :LOGBOOK:
   CLOCK: [2017-03-04 Sat 16:55]--[2017-03-04 Sat 17:18] =>  0:23
   :END:
-* TODO Find by first name
+* DONE Find by first name
+  CLOSED: [2017-03-04 Sat 18:12]
+  :LOGBOOK:
+  CLOCK: [2017-03-04 Sat 18:01]--[2017-03-04 Sat 18:12] =>  0:11
+  :END:
 * TODO Read from standard input
 * TODO Print how many males
 * TODO Print who is the oldest
