@@ -47,4 +47,12 @@ public class AddressBookTest {
         assertThat(addressBook.findByGender(Gender.Male)).isEmpty();
     }
 
+    @Test
+    public void testSortByDob() throws Exception {
+        AddressBook addressBook = new AddressBook(contacts);
+        List<Person> sortedContacts = addressBook.sortByDob();
+        Person oldestPerson = sortedContacts.stream().findFirst().get();
+        assertThat(oldestPerson.getName()).isEqualTo("Bill");
+    }
+
 }

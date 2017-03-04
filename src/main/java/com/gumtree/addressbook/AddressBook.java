@@ -21,4 +21,10 @@ public class AddressBook {
                 .collect(Collectors.toList());
     }
 
+    public List<Person> sortByDob() {
+        return contacts.stream()
+                .sorted((p1, p2) -> p1.getDob().compareTo(p2.getDob()))
+                .collect(Collectors.toList());
+    }
+
 }

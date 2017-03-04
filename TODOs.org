@@ -3,7 +3,11 @@
   :LOGBOOK:
   CLOCK: [2017-03-04 Sat 15:57]--[2017-03-04 Sat 16:26] =>  0:29
   :END:
-* TODO Sort by age
+* DONE Sort by age
+  CLOSED: [2017-03-04 Sat 16:54]
+  :LOGBOOK:
+  CLOCK: [2017-03-04 Sat 16:43]--[2017-03-04 Sat 16:54] =>  0:11
+  :END:
 * TODO Age difference in days
 * TODO Find by first name
 * TODO Read from standard input
