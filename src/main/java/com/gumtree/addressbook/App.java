@@ -20,18 +20,27 @@ public class App {
     public static final String dateFormat = conf.getString("date.format");
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        List<Person> contacts = readContacts(scanner);
+        AddressBook addressBook = new AddressBook(contacts);
+        answers(addressBook);
+    }
 
+    public static List<Person> readContacts(Scanner scanner) {
         List<Person> contacts = new ArrayList<>();
-
-        while (scan.hasNext()) {
-            String line = scan.nextLine();
+        while (scanner.hasNext()) {
+            String line = scanner.nextLine();
             contacts.add(createPerson(line));
         }
+        return contacts;
+    }
 
-        AddressBook addressBook = new AddressBook(contacts);
+    public static void answers(AddressBook addressBook) {
         questionAnswer("How many males are in the address book?", addressBook.filterByGender(Gender.Male).size());
-        questionAnswer("Who is the oldest person in the address book?", addressBook.sortByDob().stream().findFirst().get().getName());
+
+        Person oldestPerson = addressBook.sortByDob().stream().findFirst().get();
+        questionAnswer("Who is the oldest person in the address book?", oldestPerson.getName());
+
         Person bill = addressBook.findByFirstName("Bill").get();
         Person paul = addressBook.findByFirstName("Paul").get();
         questionAnswer("How many days older is Bill than Paul?", DateUtils.daysBetween(bill.getDob(), paul.getDob()));
