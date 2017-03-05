@@ -25,12 +25,8 @@ public class App {
         List<Person> contacts = new ArrayList<>();
 
         while (scan.hasNext()) {
-            String contact = scan.nextLine();
-            String[] split = contact.split(",");
-            String name = split[0];
-            Gender gender = Gender.valueOf(split[1].trim());
-            LocalDate dob = DateUtils.parseDate(split[2].trim());
-            contacts.add(new Person(name, gender, dob));
+            String line = scan.nextLine();
+            contacts.add(createPerson(line));
         }
 
         AddressBook addressBook = new AddressBook(contacts);
@@ -44,6 +40,17 @@ public class App {
     public static void questionAnswer(String question, Object object) {
         System.out.println("Question: " + question);
         System.out.println("Answer: " + object);
+    }
+
+    public static Person createPerson(String line) {
+        String[] split = line.split(",");
+        return createPerson(split[0], split[1], split[2]);
+    }
+
+    public static Person createPerson(String name, String genderString, String dobString) {
+        Gender gender = Gender.valueOf(genderString.trim());
+        LocalDate dob = DateUtils.parseDate(dobString.trim());
+        return new Person(name, gender, dob);
     }
 
 }

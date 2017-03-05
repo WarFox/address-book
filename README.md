@@ -24,3 +24,18 @@ Some insights into what we'll be looking for (and what we will not):
 - We will be looking at how you approach the task (e.g. how you break it into sub-tasks) and how you structure your code to answer the questions
 
 Good Luck!
+
+## Setup
+
+```
+mvn archetype:generate -DgroupId=com.gumtree.addressbook -DartifactId=address-book -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
+
+## Assumptions
+- No two people have same dob
+- Read from standard input
+
+## Run
+```
+mvn package; cat AddressBook | java -jar target/address-book-1.0-SNAPSHOT.jar
+```

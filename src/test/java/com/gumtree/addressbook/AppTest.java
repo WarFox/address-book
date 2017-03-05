@@ -1,35 +1,29 @@
 package com.gumtree.addressbook;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import com.gumtree.addressbook.models.Gender;
+import com.gumtree.addressbook.models.Person;
+import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest extends TestCase {
+import java.time.LocalDate;
 
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest(String testName) {
-        super(testName);
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class AppTest {
+
+    @Test
+    public void testCreatePersonFromString() throws Exception {
+        Person person = App.createPerson("firstname lastname, Male, 12/12/12");
+        assertThat(person.getName()).isEqualTo("firstname lastname");
+        assertThat(person.getDob()).isEqualTo(LocalDate.of(2012, 12, 12));
+        assertThat(person.getGender()).isEqualTo(Gender.Male);
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite() {
-        return new TestSuite(AppTest.class);
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp() {
-        assertTrue(true);
+    @Test
+    public void testCreatePersonFrom3Strings() throws Exception {
+        Person person = App.createPerson("firstname lastname", "Male", "12/12/12");
+        assertThat(person.getName()).isEqualTo("firstname lastname");
+        assertThat(person.getDob()).isEqualTo(LocalDate.of(2012, 12, 12));
+        assertThat(person.getGender()).isEqualTo(Gender.Male);
     }
 
 }
