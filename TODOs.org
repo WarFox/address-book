@@ -32,3 +32,9 @@
   CLOSED: [2017-03-04 Sat 19:54]
 * DONE Add date format to config file
   CLOSED: [2017-03-04 Sat 20:12]
+* DONE Refactor create person logic and test it
+  CLOSED: [2017-03-05 Sun 18:04]
+  :LOGBOOK:
+  CLOCK: [2017-03-05 Sun 17:40]--[2017-03-05 Sun 18:05] =>  0:25
+  :END:
+* Get messages from resource

@@ -44,13 +44,20 @@ public class App {
 
     public static Person createPerson(String line) {
         String[] split = line.split(",");
+        if (split.length != 3) {
+            throw new IllegalArgumentException("Each line should have exactly 3 sections separated by comma");
+        }
         return createPerson(split[0], split[1], split[2]);
     }
 
     public static Person createPerson(String name, String genderString, String dobString) {
-        Gender gender = Gender.valueOf(genderString.trim());
-        LocalDate dob = DateUtils.parseDate(dobString.trim());
-        return new Person(name, gender, dob);
+        try {
+            Gender gender = Gender.valueOf(genderString.trim());
+            LocalDate dob = DateUtils.parseDate(dobString.trim());
+            return new Person(name, gender, dob);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Failed to create person from input", e);
+        }
     }
 
 }
